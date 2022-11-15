@@ -1,6 +1,6 @@
 describe('Duplicating data from one account to another', () => {
 
-    it.skip('Copy tags', () => {
+    it('Copy tags', () => {
         // get all tags from the source account
         cy.request({
             headers: {
@@ -89,7 +89,7 @@ describe('Duplicating data from one account to another', () => {
                                 },
                                 failOnStatusCode: false
                             }).then((response2) => {
-                                if (response2.status = 423) {
+                                if (response2.status == 423) {
                                     console.log(`field ${fieldname} (${fieldDisplaytype}) already exists`)
                                 } else {
                                     assert.equal(response2.status, 200, `Error: ${response2.error}`)
